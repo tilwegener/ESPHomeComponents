@@ -4,7 +4,7 @@ import esphome.codegen as cg
 import esphome.config_validation as cv
 from esphome.core import CORE
 
-from . import transceiver_sx1262, transceiver_sx1276
+from . import transceiver_cc1101, transceiver_sx1262, transceiver_sx1276
 from .radio import SCHEMA as RADIO_SCHEMA
 from .radio import RadioComponent, register_radio
 from .transceiver import CONF_RADIO_TYPE
@@ -19,7 +19,7 @@ MULTI_CONF = True
 
 TRANSCEIVERS = {
     module.__name__.split(".")[-1].removeprefix("transceiver_").upper(): module
-    for module in (transceiver_sx1262, transceiver_sx1276)
+    for module in (transceiver_cc1101, transceiver_sx1262, transceiver_sx1276)
 }
 
 
